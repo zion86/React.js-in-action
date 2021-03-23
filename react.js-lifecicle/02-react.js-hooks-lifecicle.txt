@@ -1,0 +1,17 @@
+// functional Component with React hooks
+import React, { useState, useEffect } from 'react';
+
+function App() {
+
+	useEffect(() => {
+	
+		updateChar();																	// componentDidMount() { }		// появлення
+		
+		let timerId = setInterval(updateChar, 15000);	// componentDidUpdate() { }		// оновлення
+		
+		return () => {
+			clearInterval(timerId);											// componentWillMount() { }		// зникнення
+		};
+	});
+	
+};

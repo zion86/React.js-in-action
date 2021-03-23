@@ -1,0 +1,24 @@
+// class Component
+
+// Mounting (first phase - once)
+constructor() { }																	// once during initialization Component
+	static getDerivedStateFromProps() { }						// 
+render() { }																			// render Component
+componentDidMount() { }														// Component was mounted
+
+
+// Updating (second phase)
+	static getDerivedStateFromProps()	{ }	
+shouldComponentUpdate(nextProp, nextState) { }		// occurs with each update state => returt true or false
+render() { }																			// render Component
+	getSnapshotBeforeUpdate() { }										// 
+componentDidUpdate() { }													// Component has been updated
+
+
+// Unmounting (third phase)
+componentWillUnmount() { }												// Component was removed з DOM
+
+
+// Error Handling
+static getDerivedStateFromError() { }							// 
+componentDidCatch() { }														// 
