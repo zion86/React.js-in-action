@@ -1,0 +1,55 @@
+v1
+// class Component
+
+// Mounting (first phase - once)
+constructor() { }																// once during initialization Component
+	static getDerivedStateFromProps() { }					// 
+render() { }																		// render Component
+componentDidMount() { }													// Component was mounted (request to API and get data from API, work with DOM)
+
+
+// Updating (second phase)
+	static getDerivedStateFromProps()	{ }	
+shouldComponentUpdate(nextProp, nextState) { }	// occurs with each update state => returt true or false
+render() { }																		// render Component
+	getSnapshotBeforeUpdate() { }									// 
+componentDidUpdate(prevProps, prevState) { }		// Component has been updated (invoke after each update prevProps or prevState)
+																								// If (this.props.id !== prevProps.id) { update Component }
+
+
+// Unmounting (third phase)
+componentWillUnmount() { }											// Component was removed from DOM (clearInterval, removeEventLictener, discart fetch)
+
+
+// Error Handling
+static getDerivedStateFromError() { }						//
+componentDidCatch() { }													// throw errors in lifecycle methods below in Components hierarchy
+																								// componentDidCatch(error, info) { }
+																								// <WrapperError> <!-- componentDidCatch -->
+																								//   <Item />
+																								//   <Item />
+																								// <WrapperError />
+
+
+
+v2
+Mounting
+--------
+constructor()		=>		render()		=>		componentDidMount()
+
+
+Updating
+--------
+new Props
+								=>		render()		=>		componentDidUpdate(prevProps, prevState)
+setState()
+
+
+Unmounting
+----------
+componentWillUnmount()
+
+
+Error
+-----
+componentDidCatch()
